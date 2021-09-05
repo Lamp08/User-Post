@@ -1,10 +1,14 @@
 package com.rest.webservices.restfulwebservices.data;
 
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 public class User {
     private int id;
+    @Size(min = 5, message = "Name should have atleast 5 characters")
     private String name;
+    @Past
     private Date Birthdate;
 
     public int getId() {
